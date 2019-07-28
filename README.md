@@ -37,10 +37,14 @@ Battleship
 
 ## Swagger
 Swagger doc gives information about api like available routes and its models and also it works like test harness.
-You can run the swagger from http://localhost:5001/swagger
+You can run the swagger from 
+* Local http://localhost:5001/swagger
+* Server http://battleship-suresh.azurewebsites.net/swagger
 
 ## Health Check
-You can run the health check from http://localhost:5001/healthchecks-ui
+You can run the health check from 
+* Local http://localhost:5001/healthchecks-ui
+* Server http://battleship-suresh.azurewebsites.net/healthchecks-ui
 
 ## Integration tests
 The integration tests create a database for each test (the tests will remove the db afterwards as well).  The tests will either use the local database server if available (it will look for localhost on port 1433, so make sure you have TCP/IP enabled if you want to use this option) or if there is no database server installed it will use docker instead.  If you have docker installed these tests will run automatically without any interaction (although they may fail the first time if you don't have the required images, docker will download these for you, so just rerun the tests).  If you are going to be running these integration tests often, then you may prefer to keep the required docker image running as this will speed up the test execution (i.e. it won't need to spin up and tear down the image for each test run).  Use the following to run the docker image:

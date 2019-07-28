@@ -74,7 +74,7 @@ namespace Battleship
             }
             else
             {
-                app.UseExceptionHandler("error");
+                app.UseExceptionHandler("/error");
             }
 
             app.UseSwagger();
