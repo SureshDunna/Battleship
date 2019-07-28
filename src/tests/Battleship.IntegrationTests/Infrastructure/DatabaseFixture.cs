@@ -66,8 +66,8 @@ namespace Battleship.IntegrationTests.Infrastructure
             _containerName = "test-mssql-" + Guid.NewGuid().ToString("N").Substring(0, 8);
             Port = GetNextPort();
 
-            RunDockerProcess($"run -d --rm --name {_containerName} -e \"ACCEPT_EULA=Y\" -e \"SA_PASSWORD=Password01!\" -p {Port}:1433 mcr.microsoft.com/mssql/server:2017-latest");
-            Thread.Sleep(TimeSpan.FromSeconds(20)); // it takes a while for containers to warm up
+            RunDockerProcess($"run -d --rm --name {_containerName} -e \"ACCEPT_EULA=Y\" -e \"SA_PASSWORD=Password01!\" -p {Port}:1433 microsoft/mssql-server-windows-express");
+            Thread.Sleep(TimeSpan.FromSeconds(200)); // it takes a while for containers to warm up
         }
 
         private void Stop()
